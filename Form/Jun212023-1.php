@@ -37,10 +37,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Website - Feedback Form</title>
 </head>
 <body>
-    <h1>PHP Form</h1>
+    <h1>Feedback Form</h1>
     <p>* required field</p>
     <form action="<?php echo clean_data($_SERVER['PHP_SELF']); ?>" method="post">
         <div>
