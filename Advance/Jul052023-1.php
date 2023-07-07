@@ -1,36 +1,55 @@
 <?php
-function pr ($assocArr)
-{
-    echo "<pre>";
-    print_r($assocArr);
-    echo "</pre>";
-}
-// pr(timezone_abbreviations_list());
-// pr(timezone_identifiers_list());
+    echo "Today is " . date("Y/m/d") . "<br>";
+    echo "Today is " . date("Y.m.d") . "<br>";
+    echo "Today is " . date("Y-m-d") . "<br>";
+    echo "Today is " . date("Y-M-d") . "<br>";
+    echo "Today is " . date("l");
+    echo "<p>Today is " . date("d - m - Y - l h:i:s a Hi")." hrs</p>";
 
-date_default_timezone_set("Asia/Karachi");
-echo "<p>" . date("d - m - Y - l h:i:s a Hi")." hrs</p>";
+    function pr ($assocArr)
+    {
+        echo "<pre>";
+        print_r($assocArr);
+        echo "</pre>";
+    }
+    // pr(timezone_abbreviations_list());
+    pr(timezone_identifiers_list());
 
-// mktime(hour, minute, second, month, day, year)
+    date_default_timezone_set("Asia/Karachi");
+    echo "<p>" . date("d - m - Y - l h:i:s a Hi")." hrs</p>";
 
-$AhmedDOB = mktime(13,30,45,04,22,2001);
-$UroosaDOB = mktime(4,30,35,03,12,2004);
+    // mktime(hour, minute, second, month, day, year)
 
-echo "<p>" . date("d - m - Y - l h:i:sa",$AhmedDOB) . "</p>";
-echo "<p>" . date("d - m - Y - l h:i:sa",$UroosaDOB) . "</p>";
+    $AhmedDOB = mktime(13,30,45,04,22,2001);
+    $UroosaDOB = mktime(4,30,35,03,12,2004);
+    $AreeshaDOB = mktime(5,20,35,07,28,2001);
+    $UmerDOB = mktime(4,25,50,01,13,2004);
 
-$date = "Wed Jul 05 2023 12:45:15pm";
-$date = strtotime($date);
-echo "<p>" . date("d - m - Y - l h:i:sa",$date) . "</p>";
+    echo "<p>AhmedDOB : " . date("d - M - Y - l h:i:sa",$AhmedDOB) . "</p>";
+    echo "<p>UroosaDOB : " . date("d - M - Y - l h:i:sa",$UroosaDOB) . "</p>";
+    echo "<p>AreeshaDOB : " . date("d - M - Y - l h:i:sa",$AreeshaDOB) . "</p>";
+    echo "<p>UmerDOB : " . date("d - M - Y - l h:i:sa",$UmerDOB) . "</p>";
 
-$date = "tomorrow 1:30:12pm";
-$date = strtotime($date);
-echo "<p>" . date("d - m - Y - l h:i:sa",$date) . "</p>";
+    //strtotime("dateString"); text/string to time
+    
+    $textDate = "Wed Jul 05 2023 12:45:15pm";
+    $theDate = strtotime($textDate);
+    echo "<p>" . date("d - m - Y - l h:i:sa",$theDate) . "</p>";
 
-$date = "next sunday 1:30:12pm";
-$date = strtotime($date);
-echo "<p>" . date("d - m - Y - l h:i:sa",$date) . "</p>";
+    $textDate = "tomorrow 1:30:12pm";
+    $theDate = strtotime($textDate);
+    echo "<p>" . date("d - m - Y - l h:i:sa",$theDate) . "</p>";
 
-$date = "+3 Months";
-$date = strtotime($date);
-echo "<p>" . date("d - M - Y - l h:i:sa",$date) . "</p>";
+    $textDate = "next sunday 1:30:12pm";
+    $theDate = strtotime($textDate);
+    echo "<p>" . date("d - m - Y - l h:i:sa",$theDate) . "</p>";
+
+    $textDate = "+3 Months";
+    $theDate = strtotime($textDate);
+    echo "<p>" . date("d - M - Y - l h:i:sa",$theDate) . "</p>";
+
+    for($year=date("Y",$AreeshaDOB); $year <= date("Y");$year++)
+    {
+        $theDOB = mktime(5,20,35,07,28,$year);        
+        echo date("d - M - Y - l h:i:sa",$theDOB)."<br>";        
+    }
