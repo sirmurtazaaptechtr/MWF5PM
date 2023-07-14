@@ -48,7 +48,9 @@
     $theDate = strtotime($textDate);
     echo "<p>" . date("d - M - Y - l h:i:sa",$theDate) . "</p>";
 
-    for($year=date("Y",$AreeshaDOB); $year <= date("Y");$year++)
+    $yourDOB = mktime(5,20,35,07,28,2001);
+
+    for($year=date("Y",$yourDOB); $year <= date("Y");$year++)
     {
         $theDOB = mktime(5,20,35,07,28,$year);        
         echo date("d - M - Y - l h:i:sa",$theDOB)."<br>";        
