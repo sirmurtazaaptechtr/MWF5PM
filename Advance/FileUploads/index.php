@@ -12,5 +12,6 @@
             <input type="submit" name="submit" value="Upload" class="btn btn-primary">
         </div>
     </form>
+
 </div>
 <?php require('footer.inc.php') ?>
